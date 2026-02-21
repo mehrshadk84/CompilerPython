@@ -42,3 +42,28 @@ The Semantic Analyzer traverses the generated AST to enforce the rules of the la
    git clone https://github.com/mehrshadk84/CompilerPython.git
    cd CompilerPython
    
+2. Install dependencies:
+   pip install ply
+   
+3. Run the compiler on a test file:
+   python main.py tests/sample_code.txt
+   
+python main.py tests/sample_code.txt
+   
+🎯 Example Pipeline Output
+When a valid source file is processed, the compiler outputs the success of each phase:
+
+text
+Compiling tests/sample_code.txt...
+
+Syntax OK ✅
+AST Generation Successful 🌳
+Semantic Analysis OK ✅
+
+Compilation Successful! Ready for Intermediate Code Generation.
+
+---
+*Developed by [Mehrshad](https://github.com/mehrshadk84) as a deep dive into Compiler Design and Automata Theory.*
+
+
+---
