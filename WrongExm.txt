@@ -1,0 +1,54 @@
+int x;
+x = 10 @ 5;  
+if (x < 5) { 
+    print(x)
+}   
+
+``` 
+----- Lexical Errors Detected -----
+Lexical Error at line 2: illegal sequence @
+-----------------------------------
+Parsing skipped due to lexical errors.
+```
+///
+int 2val;    
+
+func test() {
+    print("ok")
+}           
+```
+----- Lexical Errors Detected -----
+Lexical Error at line 1: invalid identifier 2val
+-----------------------------------
+Parsing skipped due to lexical errors.
+```
+///
+int x;
+x = 10;
+
+if (x > 5 {   
+    print(x);
+}
+```
+Syntax Error at line 4: unexpected token '{'
+Syntax Error at line 6: unexpected token '}'
+```
+///
+int a;
+a = 3;
+
+else {          
+    print(a);
+}
+```
+Syntax Error at line 5: unexpected token 'else'
+```
+///
+func add(int a, int b )
+{
+    return a + b;
+}
+int a == 12;
+```
+Syntax Error at line 5: unexpected token '=='
+```

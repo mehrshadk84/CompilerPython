@@ -1,0 +1,52 @@
+int x;
+float y;
+x = 5;
+y = x + 3.2;
+print(y);
+end
+ok
+
+x = 5;
+int x;
+end
+Semantic Error: 'x' is not defined
+
+int x;
+x = 3.5;
+end
+Cannot assign float to int
+
+int x;
+if (x) {
+   print(x);
+}
+end
+Condition of if must be bool
+
+int arr[10];
+arr[2.5] = 3;
+end
+Array index must be int
+
+func f(int a, float b) {
+   print(a);
+}
+
+int x;
+x = f(3);
+end
+Function argument count mismatch
+
+func show(int a, int b) {
+    int c;
+    c = a + b;
+    print(c);
+}
+
+int x;
+x = 5;
+print(x);
+end
+OKKKKK
+
+
