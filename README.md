@@ -31,8 +31,8 @@ The pipeline consists of four distinct theoretical phases:
 
 Ensure you have Python 3.8+ installed. Clone the repository and install the required dependencies:
 ```bash
-git clone https://github.com/YourUsername/YourRepositoryName.git
-cd YourRepositoryName
+git clone https://github.com/mehrshadk84/CompilerPython.git
+cd Compilerpython
 pip install ply customtkinter
 
 ### Running the Compiler
