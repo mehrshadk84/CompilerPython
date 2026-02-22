@@ -34,7 +34,7 @@ Ensure you have Python 3.8+ installed. Clone the repository and install the requ
 git clone https://github.com/mehrshadk84/CompilerPython.git
 cd Compilerpython
 pip install ply customtkinter
-
+```
 ### Running the Compiler
 Launch the Graphical Interface by running:
 
