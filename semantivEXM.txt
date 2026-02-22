@@ -1,35 +1,43 @@
+1️/ Scope و Symbol Table (global / local)
+int x;
+
+func f() {
+    int x;
+    x = 5;
+    print(x);
+}
+
+x = 3;
+print(x);
+end
+
+Semantic Analysis OK
+
+تعریف قبل از استفاده2
+
+x = 5;
+int x;
+end
+
+Semantic Error: 'x' is not defined
+
+3/Type Checking درست
 int x;
 float y;
 x = 5;
-y = x + 3.2;
-print(y);
+y = x;
 end
-ok
+Syntax OK
 
-x = 5;
-int x;
-end
-Semantic Error: 'x' is not defined
-
+3/Type Checking  غلط
 int x;
 x = 3.5;
 end
-Cannot assign float to int
+Syntax OK
 
-int x;
-if (x) {
-   print(x);
-}
-end
-Condition of if must be bool
-
-int arr[10];
-arr[2.5] = 3;
-end
-Array index must be int
-
+4/پارامترهای تابع غلط
 func f(int a, float b) {
-   print(a);
+    print(a);
 }
 
 int x;
@@ -37,16 +45,94 @@ x = f(3);
 end
 Function argument count mismatch
 
-func show(int a, int b) {
-    int c;
-    c = a + b;
-    print(c);
+4/ نوع غلط
+func f(int a) {
+    print(a);
 }
 
 int x;
+x = f(2.5);
+end
+Cannot assign float to int
+
+5/ return  بیرون تابع
+return 5;
+end
+
+
+5/ریتارن تابع ووید
+func f() {
+    return 3;
+}
+end
+Void function cannot return a value
+
+6/عبارات بولی
+int x;
+if (x) {
+    print(x);
+}
+end
+Condition of if must be bool
+
+6/درست
+bool a;
+bool b;
+if (a && b) {
+    print(a);
+}
+end
+
+
+7/ ارایه ها درست
+int arr[10];
+arr[2] = 5;
+end
+
+
+7/غلط
+int arr[10];
+arr[2.5] = 3;
+end
+
+
+مثال برای سیمبل تیبل
+int x;
+float y;
 x = 5;
+y = x + 3.2;
 print(x);
 end
-OKKKKK
+
+
+func f() {
+    return 3;
+}
+end
+
+
+
+مثال gui
+int x;
+int y;
+
+x = 5;
+y = 10;
+
+if (x < y) {
+    print(x);
+}
+
+while (x < 8) {
+    x = x + 1;
+}
+
+print(y);
+
+
+
+
+
+
 
 

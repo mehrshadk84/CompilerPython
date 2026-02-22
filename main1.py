@@ -225,7 +225,7 @@ class CompilerGUI:
                 self.status_bar.configure(text="Syntax errors found!")
                 return
 
-            # === SEMANTIC ANALYSIS (ALL SCOPES) ===
+            # === SEMANTIC ANALYSIS (FIXED) ===
             semantic_analyzer = SemanticAnalyzer()
             sem_errors = semantic_analyzer.analyze(result)
 
@@ -238,26 +238,14 @@ class CompilerGUI:
             else:
                 semantic_output += "✓ Semantic analysis passed!\n\n"
                 semantic_output += "Symbol Table:\n"
-                semantic_output += "-" * 30 + "\n"
+                semantic_output += "-"*30 + "\n"
 
                 symtab = semantic_analyzer.symtab
-
-                # Global scope
-                semantic_output += "Scope 0 (global):\n"
-                global_scope = symtab.scopes[0]
-                if global_scope:
-                    for name, info in global_scope.items():
-                        semantic_output += f"  {name}: {info}\n"
-                else:
-                    semantic_output += "  (empty)\n"
-                semantic_output += "\n"
-
-                # All other scopes (history)
-                for i, (scope_name, scope) in enumerate(symtab.all_scopes, start=1):
-                    semantic_output += f"Scope {i} ({scope_name}):\n"
+                for i, (scope, name) in enumerate(zip(symtab.scopes, symtab.scope_names)):
+                    semantic_output += f"Scope {i} ({name}):\n"
                     if scope:
-                        for name, info in scope.items():
-                            semantic_output += f"  {name}: {info}\n"
+                        for sym, info in scope.items():
+                            semantic_output += f"  {sym}: {info}\n"
                     else:
                         semantic_output += "  (empty)\n"
                     semantic_output += "\n"
